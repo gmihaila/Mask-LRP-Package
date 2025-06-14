@@ -13,12 +13,11 @@ authors = [{ name = "Your Name", email = "you@email.com"}]
 # if you have external deps, list them
 dependencies = [
      "scipy>=1.10.1",
-     "torch>=2.0",
-     "transformers>=4.46.3",
+     "torch",
+     "transformers",
      "matplotlib",
      "scikit-image>=0.21.0",
      "evaluate",
-
 ]
 
 [project.urls]
