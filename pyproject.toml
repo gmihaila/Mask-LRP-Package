@@ -20,7 +20,4 @@ Homepage = "https://github.com/gmihaila/Mask-LRP-Package"
 
 [tool.setuptools]
 package-dir = {"" = "."}                  # root based (no /src)
-packages = ["Transformer_Explanation", "utils"]    # the folder to install
-py-modules = ["evaluate_explainability",
-              "attn_head_stats",
-              "self_parser"]                       # … any other lone .py files
+packages = ["Transformer_Explanation"]    # the folder to install
