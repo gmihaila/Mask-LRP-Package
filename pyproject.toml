@@ -18,10 +18,6 @@ dependencies = [
 [project.urls]
 Homepage = "https://github.com/gmihaila/Mask-LRP-Package"
 
-[tool.setuptools]
-package-dir = {"" = "."}                  # root based (no /src)
-packages = ["Transformer_Explanation"]    # the folder to install
-
 # ─────────────────────────────────────────────
 # Tell setuptools to include every folder that
 # starts with  Transformer_Explanation …
