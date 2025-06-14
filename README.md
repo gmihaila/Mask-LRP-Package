@@ -1,5 +1,10 @@
 # PyTorch Implementation for "Better Explain Transformers by Illuminating Important Information"
 
+## Install
+
+```shell
+pip install "git+https://github.com/gmihaila/Mask-LRP-Package"
+```
 
 ### Datasets
 We use preprocessed dataset parsed by Stanza with the data structure below:
