@@ -7,7 +7,7 @@ from tqdm import tqdm
 import torch.multiprocessing as mp
 import os
 import pickle as pkl
-from utils.preprocess import preprocess_sample, load_dataset_json, load_model_and_tokenizer
+from Transformer_Explanation.utils import preprocess_sample, load_dataset_json, load_model_and_tokenizer
 
 
 os.environ['TOKENIZERS_PARALLELISM'] = 'true'
