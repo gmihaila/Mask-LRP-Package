@@ -30,7 +30,7 @@ class Generator:
 
     def MGAE(self, input_ids, attention_mask,
             index=None, start_layer=0, output_attentions=False, 
-            head_mask=None, token_type_ids=None):
+            head_mask=None, token_type_ids=None, **kwargs):
         
         result = self.model(input_ids=input_ids,
                             attention_mask=attention_mask,
@@ -115,7 +115,7 @@ class Generator:
 
     def AttCAT(self, input_ids, attention_mask,
                index=None, start_layer=0, output_attentions=False,
-               head_mask=None, token_type_ids=None):
+               head_mask=None, token_type_ids=None, **kwargs):
 
         result = self.model(input_ids=input_ids,
                             attention_mask=attention_mask,
@@ -185,7 +185,7 @@ class Generator:
             index=None, 
             start_layer=0, 
             output_attentions=False,
-            token_type_ids=None):
+            token_type_ids=None, **kwargs):
         
         result = self.model(input_ids=input_ids,
                             attention_mask=attention_mask,
@@ -246,7 +246,7 @@ class Generator:
 
     def generate_LRP_last_layer(self, input_ids, attention_mask,
                                 index=None, start_layer=0, output_attentions=False, 
-                                head_mask=None, token_type_ids=None):
+                                head_mask=None, token_type_ids=None, **kwargs):
         output = self.model(input_ids=input_ids, 
                             attention_mask=attention_mask, 
                             token_type_ids=token_type_ids,
@@ -279,7 +279,7 @@ class Generator:
 
     def generate_full_lrp(self, input_ids, attention_mask,
                           index=None, start_layer=0, output_attentions=False, 
-                          head_mask=None, token_type_ids=None):
+                          head_mask=None, token_type_ids=None, **kwargs):
         output = self.model(input_ids=input_ids, 
                             attention_mask=attention_mask, 
                             token_type_ids=token_type_ids,
@@ -308,7 +308,7 @@ class Generator:
 
     def generate_attn_last_layer(self, input_ids, attention_mask,
                                  index=None, start_layer=0, output_attentions=False, 
-                                 head_mask=None, token_type_ids=None):
+                                 head_mask=None, token_type_ids=None, **kwargs):
         self.model(input_ids=input_ids, attention_mask=attention_mask, token_type_ids=token_type_ids)[0]
         if 'bert' in self.model_name:
             cam = self.model.__dict__['_modules'][self.model_name].encoder.layer[-1].attention.self.get_attn()[0]
@@ -325,7 +325,7 @@ class Generator:
 
     def generate_rollout(self, input_ids, attention_mask,
                          index=None, start_layer=0, output_attentions=False, 
-                         head_mask=None, token_type_ids=None):
+                         head_mask=None, token_type_ids=None, **kwargs):
         self.model.zero_grad()
         output = self.model(input_ids=input_ids, 
                             attention_mask=attention_mask, 
@@ -352,7 +352,7 @@ class Generator:
 
     def generate_attn_gradcam(self, input_ids, attention_mask,
                               index=None, start_layer=0, output_attentions=False, 
-                              head_mask=None, token_type_ids=None):
+                              head_mask=None, token_type_ids=None, **kwargs):
         
         output = self.model(input_ids=input_ids, 
                             attention_mask=attention_mask, 
@@ -392,7 +392,7 @@ class Generator:
 
     def generate_gradcam(self, input_ids, attention_mask,
                          index=None, start_layer=0, output_attentions=False, 
-                         head_mask=None, token_type_ids=None):
+                         head_mask=None, token_type_ids=None, **kwargs):
         output = self.model(input_ids=input_ids, 
                             attention_mask=attention_mask, 
                             token_type_ids=token_type_ids)[0]
